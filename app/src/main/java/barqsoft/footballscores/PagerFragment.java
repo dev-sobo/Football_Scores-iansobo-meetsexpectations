@@ -1,6 +1,7 @@
 package barqsoft.footballscores;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +20,16 @@ import java.util.Date;
 /**
  * Created by yehya khaled on 2/27/2015.
  */
+
 public class PagerFragment extends Fragment
 {
     public static final int NUM_PAGES = 5;
     public ViewPager mPagerHandler;
     private myPageAdapter mPagerAdapter; // inner class
     private MainScreenFragment[] viewFragments = new MainScreenFragment[5];
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
@@ -45,9 +51,18 @@ public class PagerFragment extends Fragment
     }
     private class myPageAdapter extends FragmentStatePagerAdapter
     {
+        private final String LOG_TAG = myPageAdapter.class.getSimpleName();
+        Configuration config = getResources().getConfiguration();
+        public int layoutDirection = config.getLayoutDirection();
+
         @Override
         public Fragment getItem(int i)
         {
+
+            if (layoutDirection == View.LAYOUT_DIRECTION_RTL) {
+                Log.d(LOG_TAG, "IN RTL MODE");
+                i = Utilies.positionForRTL(i, getCount());
+            }
             return viewFragments[i];
         }
 
@@ -65,6 +80,7 @@ public class PagerFragment extends Fragment
         @Override
         public CharSequence getPageTitle(int position)
         {
+            if ( layoutDirection == View.LAYOUT_DIRECTION_RTL) position = Utilies.positionForRTL(position, getCount());
             return getDayName(getActivity(),System.currentTimeMillis()+((position-2)*86400000));
         }
         public String getDayName(Context context, long dateInMillis) {

@@ -1,6 +1,7 @@
 package barqsoft.footballscores;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,7 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
     private String[] fragmentdate = new String[1];
     private int last_selected_item = -1;
     private static final String LOG_TAG = MainScreenFragment.class.getSimpleName();
+
 
     public MainScreenFragment()
     {
