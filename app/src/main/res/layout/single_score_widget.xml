@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
+        android:text="@string/dash"
         android:id="@+id/dash"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Team"
+        android:text="@string/HomeTeam"
         android:id="@+id/homeTeamId"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Away Team"
+        android:text="@string/AwayTeam"
         android:id="@+id/awayTeamId"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="-"
+        android:text="@string/dash"
         android:id="@+id/homeScoreTextId"
         android:layout_centerVertical="true"
         android:layout_alignParentBottom="false"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="-"
+        android:text="@string/dash"
         android:id="@+id/awayScoreTextId"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

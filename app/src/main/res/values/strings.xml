@@ -8,12 +8,12 @@
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
     <string name="tomorrow">Tomorrow</string>
-    <string name="champions_league">UEFA Champions League</string>
+    <string name="champions_league" translatable = "false">UEFA Champions League</string>
     <string name="bundesliga">Bundesliga</string>
-    <string name="premierleague">Premier League</string>
+    <string name="premierleague" translatable = "false">Premier League</string>
     <string name="primeradivison">Primera Division</string>
     <string name="seriaa">Serie A</string>
-    <string name="matchday_text">Match day</string>
+    <string name="matchday_text" translatable = "false">Match day</string>
     <string name="group_stage_text">Group stages</string>
     <string name="first_knockout_round">First knockout round</string>
     <string name="quarter_final">Quarter Final</string>
@@ -41,4 +41,29 @@
     <string name="HomeTeamImage">Home Team Image</string>
     <string name="AwayTeamImage">Away Team Image</string>
     <string name="PageSwitcher">Switch pages here</string>
+    <string name="myFetchService">myFetchService</string>
+    <string name="footballscoreshashtag">#Football_Scores</string>
+    <string name="HomeTeamContentDescrip">"Home team: "</string>
+    <string name="AwayTeamContentDescrip">"Away Team: "</string>
+    <string name="MatchTimeContentDescrip">"Match time is at: "</string>
+    <string name="ScoreContentDescrip">"The score is: "</string>
+    <string name="UnknownURI">Unknown uri :</string>
+    <string name="NullCursorException">NULL CURSOR RETURNED</string>
+    <string name="CursorCouldNotGoToFirst">COULD NOT GO TO FIRST</string>
+    <string name="NoScoreContentDescrip">NO SCORE</string>
+    <string name="GroupStageMatchDay" translatable = "false">Group Stages, Matchday : 6</string>
+    <string name="NumberMatchday" translatable = "false">"Matchday : "</string>
+    <string name="FinalMatchDay" translatable = "false">Final</string>
+    <string name="MatchdaySemiFinal" translatable = "false">SemiFinal</string>
+    <string name="QuarterFinalMatchDay" translatable = "false">QuarterFinal</string>
+    <string name="FirstKnockoutRoundMatchDay" translatable = "false">First Knockout round</string>
+    <string name="SeriaLeage" translatable = "false">Seria A</string>
+    <string name="PremierLeague" translatable = "false">Premier League</string>
+    <string name="UEFAChampionsLeague" translatable = "false">UEFA Champions League</string>
+    <string name="PrimeraDivisionLeauge" translatable = "false">Primera Division</string>
+    <string name="BundesligaLeague" translatable = "false">Bundesliga</string>
+    <string name="UnknownLeague" translatable = "false">Not known League Please report</string>
+    <string name="HomeTeam">Home Team</string>
+    <string name="dash" translatable = "false">-</string>
+    <string name="AwayTeam">Away Team</string>
 </resources>

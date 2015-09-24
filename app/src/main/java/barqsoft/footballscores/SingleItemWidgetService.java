@@ -49,11 +49,11 @@ public class SingleItemWidgetService extends IntentService {
                 SCORE_COLUMNS, null, null, DatabaseContract.scores_table.HOME_COL + " ASC");
 
         if (scoresData == null) {
-            Log.e(LOG_TAG, "NULL CURSOR RETURNED");
+            Log.e(LOG_TAG, getString(R.string.NullCursorException));
             return;
         }
         if (!scoresData.moveToFirst()) {
-            Log.e(LOG_TAG, "COULD NOT GO TO FIRST");
+            Log.e(LOG_TAG, getString(R.string.CursorCouldNotGoToFirst));
             scoresData.close();
             return;
         }
@@ -80,14 +80,14 @@ public class SingleItemWidgetService extends IntentService {
             views.setTextViewText(R.id.homeScoreTextId, homeGoals.toString());
             views.setContentDescription(R.id.homeScoreTextId, homeGoals.toString());
         } else {
-            views.setContentDescription(R.id.homeScoreTextId, "NO SCORE");
+            views.setContentDescription(R.id.homeScoreTextId, getString(R.string.NoScoreContentDescrip));
         }
         views.setTextViewText(R.id.awayTeamId, awayTeam);
         if (awayGoals > -1){
             views.setTextViewText(R.id.awayScoreTextId, awayGoals.toString());
             views.setContentDescription(R.id.awayScoreTextId, awayGoals.toString());
         } else {
-            views.setContentDescription(R.id.awayScoreTextId, "NO SCORE");
+            views.setContentDescription(R.id.awayScoreTextId, getString(R.string.NoScoreContentDescrip));
         }
 
         appWidgetManager.updateAppWidget(appWidgetIds, views);

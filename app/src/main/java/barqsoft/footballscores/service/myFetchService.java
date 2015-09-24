@@ -30,6 +30,7 @@ import barqsoft.footballscores.R;
  */
 public class myFetchService extends IntentService
 {
+//    Context context = getApplicationContext();
     public static final String LOG_TAG = "myFetchService";
     public myFetchService()
     {

@@ -88,7 +88,7 @@ public class ScoresProvider extends ContentProvider
             case MATCHES_WITH_DATE:
                 return DatabaseContract.scores_table.CONTENT_TYPE;
             default:
-                throw new UnsupportedOperationException("Unknown uri :" + uri );
+                throw new UnsupportedOperationException(getContext().getString(R.string.UnknownURI) + uri );
         }
     }
 
@@ -123,7 +123,7 @@ public class ScoresProvider extends ContentProvider
                     projection,SCORES_BY_LEAGUE,selectionArgs,null,null,sortOrder);
                 break;
 
-            default: throw new UnsupportedOperationException("Unknown Uri" + uri);
+            default: throw new UnsupportedOperationException(getContext().getString(R.string.UnknownURI) + uri);
         }
         retCursor.setNotificationUri(getContext().getContentResolver(),uri);
         return retCursor;
