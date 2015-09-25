@@ -8,12 +8,12 @@
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
     <string name="tomorrow">Tomorrow</string>
-    <string name="champions_league" translatable = "false">UEFA Champions League</string>
+    <string name="champions_league" >UEFA Champions League</string>
     <string name="bundesliga">Bundesliga</string>
-    <string name="premierleague" translatable = "false">Premier League</string>
+    <string name="premierleague" >Premier League</string>
     <string name="primeradivison">Primera Division</string>
     <string name="seriaa">Serie A</string>
-    <string name="matchday_text" translatable = "false">Match day</string>
+    <string name="matchday_text" >Match day</string>
     <string name="group_stage_text">Group stages</string>
     <string name="first_knockout_round">First knockout round</string>
     <string name="quarter_final">Quarter Final</string>
@@ -33,7 +33,7 @@
         During the off season, fake data will be added to the app.
     </string>
     <string name="widget_text">This is a widget probably.</string>
-    <string name="api_key">818e5f64a2034b46a217114941307e4c
+    <string name="api_key" translatable = "false">818e5f64a2034b46a217114941307e4c
 </string>
     <string name="dummy_data">{\"timeFrameStart\":\"2015-06-18\",\"timeFrameEnd\":\"2015-06-19\",\"count\":1,\"fixtures\":[{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}}]}</string>
     <string name="appwidget_text">EXAMPLE</string>
@@ -51,20 +51,21 @@
     <string name="NullCursorException">NULL CURSOR RETURNED</string>
     <string name="CursorCouldNotGoToFirst">COULD NOT GO TO FIRST</string>
     <string name="NoScoreContentDescrip">NO SCORE</string>
-    <string name="GroupStageMatchDay" translatable = "false">Group Stages, Matchday : 6</string>
-    <string name="NumberMatchday" translatable = "false">"Matchday : "</string>
-    <string name="FinalMatchDay" translatable = "false">Final</string>
-    <string name="MatchdaySemiFinal" translatable = "false">SemiFinal</string>
-    <string name="QuarterFinalMatchDay" translatable = "false">QuarterFinal</string>
-    <string name="FirstKnockoutRoundMatchDay" translatable = "false">First Knockout round</string>
-    <string name="SeriaLeage" translatable = "false">Seria A</string>
-    <string name="PremierLeague" translatable = "false">Premier League</string>
-    <string name="UEFAChampionsLeague" translatable = "false">UEFA Champions League</string>
-    <string name="PrimeraDivisionLeauge" translatable = "false">Primera Division</string>
-    <string name="BundesligaLeague" translatable = "false">Bundesliga</string>
-    <string name="UnknownLeague" translatable = "false">Not known League Please report</string>
+    <string name="GroupStageMatchDay" >Group Stages, Matchday : 6</string>
+    <string name="NumberMatchday" >"Matchday : "</string>
+    <string name="FinalMatchDay" >Final</string>
+    <string name="MatchdaySemiFinal" >SemiFinal</string>
+    <string name="QuarterFinalMatchDay" >QuarterFinal</string>
+    <string name="FirstKnockoutRoundMatchDay" >First Knockout round</string>
+    <string name="SeriaLeage" >Seria A</string>
+    <string name="PremierLeague" >Premier League</string>
+    <string name="UEFAChampionsLeague" >UEFA Champions League</string>
+    <string name="PrimeraDivisionLeauge" >Primera Division</string>
+    <string name="BundesligaLeague" >Bundesliga</string>
+    <string name="UnknownLeague" >Not known League Please report</string>
     <string name="HomeTeam">Home Team</string>
     <string name="dash" translatable = "false">-</string>
     <string name="AwayTeam">Away Team</string>
     <string name="NoData">No Data Was Loaded</string>
+    <string name="dashWithSpace" translatable= "false">" - "</string>
 </resources>

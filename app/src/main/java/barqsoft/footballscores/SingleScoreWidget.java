@@ -21,28 +21,5 @@ public class SingleScoreWidget extends AppWidgetProvider {
         context.startService(new Intent(context,SingleItemWidgetService.class));
         Log.v("SingleScoreWidget", "TEST");
     }
-
-/*
-    @Override
-    public void onEnabled(Context context) {
-        // Enter relevant functionality for when the first widget is created
-        context.startService(new Intent(context,SingleItemWidgetService.class));
-    }*/
-
-    // TODO: refactor this code into a service?
-    // Update the textViews with home teams, away teams, and scores.
-    // From Database?
-    /*static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
-
-        CharSequence widgetText = context.getString(R.string.appwidget_text);
-        // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.single_score_widget);
-        views.setTextViewText(R.id.scoreTextWidgetId, widgetText);
-
-
-        // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
-    }*/
 }
 

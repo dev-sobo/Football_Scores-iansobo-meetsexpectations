@@ -60,11 +60,11 @@ public class Utilies
     {
         if(home_goals < 0 || awaygoals < 0)
         {
-            return " - ";
+            return App.getContext().getString(R.string.dashWithSpace);
         }
         else
         {
-            return String.valueOf(home_goals) + " - " + String.valueOf(awaygoals);
+            return String.valueOf(home_goals) + App.getContext().getString(R.string.dashWithSpace) + String.valueOf(awaygoals);
         }
     }
 

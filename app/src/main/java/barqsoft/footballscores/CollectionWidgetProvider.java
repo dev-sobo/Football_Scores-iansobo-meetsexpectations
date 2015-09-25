@@ -5,7 +5,6 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 /**
@@ -17,7 +16,6 @@ public class CollectionWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // go thru all of the app widgets to be updated with remote adapter
         for (int i = 0; i < appWidgetIds.length; ++i) {
-            Log.v(LOG_TAG, "collection");
             // This intent will start the CollectionWidgetService
             // this intent will have the appwidgetId for an extra
             Intent intent = new Intent(context, CollectionWidgetService.class);
