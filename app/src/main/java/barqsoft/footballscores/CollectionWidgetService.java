@@ -88,8 +88,8 @@ public class CollectionWidgetService extends RemoteViewsService {
             RemoteViews remoteViews = new RemoteViews(getPackageName(),
                     R.layout.collection_widget_item);
             // Get all of the strings from the cursor
-           // String homeTeam = data.getString(HOME_INDEX);
-            final int homeColIndex = data.getColumnIndex(DatabaseContract.scores_table.HOME_COL);
+
+            /*final int homeColIndex = data.getColumnIndex(DatabaseContract.scores_table.HOME_COL);
             String homeTeam = data.getString(homeColIndex);
 
             final int homeGoalsCol = data.getColumnIndex(DatabaseContract.scores_table.HOME_GOALS_COL);
@@ -102,11 +102,12 @@ public class CollectionWidgetService extends RemoteViewsService {
             Integer awayGoals = data.getInt(awayGoalsCol);
 
             final int matchDateCol = data.getColumnIndex(DatabaseContract.scores_table.DATE_COL);
-            String matchDate = data.getString(matchDateCol);
-            //Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
-            //String awayTeam = data.getString(AWAY_INDEX);
-            //Integer awayGoals = data.getInt(AWAY_GOALS_INDEX);
-            //String matchDate = data.getString(DATE_INDEX);
+            String matchDate = data.getString(matchDateCol);*/
+             String homeTeam = data.getString(HOME_INDEX);
+            Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
+            String awayTeam = data.getString(AWAY_INDEX);
+            Integer awayGoals = data.getInt(AWAY_GOALS_INDEX);
+            String matchDate = data.getString(DATE_INDEX);
             Log.d(LOG_TAG,"Match Date: " +  matchDate + " Home team: " + homeTeam + " Home Score: " + homeGoals);
             Log.d(LOG_TAG, "Match Date: " + matchDate + " Away team: " + awayTeam + " Away score: " + awayGoals);
             remoteViews.setTextViewText(R.id.homeTeamCollectionId, homeTeam);
