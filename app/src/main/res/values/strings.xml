@@ -66,4 +66,5 @@
     <string name="HomeTeam">Home Team</string>
     <string name="dash" translatable = "false">-</string>
     <string name="AwayTeam">Away Team</string>
+    <string name="NoData">No Data Was Loaded</string>
 </resources>
