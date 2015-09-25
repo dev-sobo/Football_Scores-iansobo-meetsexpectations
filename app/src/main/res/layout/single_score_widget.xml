@@ -38,15 +38,9 @@
         android:text="@string/dash"
         android:id="@+id/homeScoreTextId"
         android:layout_centerVertical="true"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_toStartOf="@+id/dash"
         android:layout_marginRight="35dp"
-        android:layout_marginEnd="35dp"/>
+        android:layout_marginEnd="35dp"
+        android:layout_alignStart="@+id/dash" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,73 +49,9 @@
         android:text="@string/dash"
         android:id="@+id/awayScoreTextId"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_toEndOf="@+id/dash"
         android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dash"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/HomeTeam"
-            android:id="@+id/textView2"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:elegantTextHeight="true"
-            android:textSize="10sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/AwayTeam"
-            android:id="@+id/textView3"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:textSize="10sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/dash"
-            android:id="@+id/textView4"
-            android:layout_centerVertical="true"
-            android:layout_alignParentBottom="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentStart="false"
-            android:layout_toStartOf="@+id/dash"
-            android:layout_marginRight="35dp"
-            android:layout_marginEnd="35dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/dash"
-            android:id="@+id/textView5"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_toEndOf="@+id/dash"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp" />
-    </LinearLayout>
+        android:layout_marginStart="35dp"
+        android:layout_alignStart="@id/dash"
+        android:textColor="#ff0030" />
 
 </RelativeLayout>

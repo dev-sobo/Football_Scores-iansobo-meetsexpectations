@@ -84,10 +84,10 @@ public class SingleItemWidgetService extends IntentService {
         }
         views.setTextViewText(R.id.awayTeamId, awayTeam);
         if (awayGoals > -1){
-            views.setTextViewText(R.id.awayScoreTextId, awayGoals.toString());
-            views.setContentDescription(R.id.awayScoreTextId, awayGoals.toString());
+            views.setTextViewText(R.id.dash, awayGoals.toString());
+            views.setContentDescription(R.id.dash, awayGoals.toString());
         } else {
-            views.setContentDescription(R.id.awayScoreTextId, getString(R.string.NoScoreContentDescrip));
+            views.setContentDescription(R.id.dash, getString(R.string.NoScoreContentDescrip));
         }
 
         appWidgetManager.updateAppWidget(appWidgetIds, views);

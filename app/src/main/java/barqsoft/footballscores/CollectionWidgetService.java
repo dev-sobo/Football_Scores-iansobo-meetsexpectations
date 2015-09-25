@@ -73,7 +73,8 @@ public class CollectionWidgetService extends RemoteViewsService {
 
         @Override
         public int getCount() {
-            return data == null ? 0 : data.getCount();
+            //return data == null ? 0 : data.getCount();
+            return data.getCount();
         }
 
         @Override
@@ -83,24 +84,40 @@ public class CollectionWidgetService extends RemoteViewsService {
                 Log.e(LOG_TAG, "cursor error");
                 return null;
             }
+            //data.moveToFirst();
             RemoteViews remoteViews = new RemoteViews(getPackageName(),
                     R.layout.single_score_widget);
             // Get all of the strings from the cursor
-            String homeTeam = data.getString(HOME_INDEX);
-            Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
-            String awayTeam = data.getString(AWAY_INDEX);
-            Integer awayGoals = data.getInt(AWAY_GOALS_INDEX);
-            String matchDate = data.getString(DATE_INDEX);
+           // String homeTeam = data.getString(HOME_INDEX);
+            final int homeColIndex = data.getColumnIndex(DatabaseContract.scores_table.HOME_COL);
+            String homeTeam = data.getString(homeColIndex);
+
+            final int homeGoalsCol = data.getColumnIndex(DatabaseContract.scores_table.HOME_GOALS_COL);
+            Integer homeGoals = data.getInt(homeGoalsCol);
+
+            final int awayColIndex = data.getColumnIndex(DatabaseContract.scores_table.AWAY_COL);
+            String awayTeam = data.getString(awayColIndex);
+
+            final int awayGoalsCol = data.getColumnIndex(DatabaseContract.scores_table.AWAY_GOALS_COL);
+            Integer awayGoals = data.getInt(awayGoalsCol);
+
+            final int matchDateCol = data.getColumnIndex(DatabaseContract.scores_table.DATE_COL);
+            String matchDate = data.getString(matchDateCol);
+            //Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
+            //String awayTeam = data.getString(AWAY_INDEX);
+            //Integer awayGoals = data.getInt(AWAY_GOALS_INDEX);
+            //String matchDate = data.getString(DATE_INDEX);
             Log.d(LOG_TAG,"Match Date: " +  matchDate + " Home team: " + homeTeam + " Home Score: " + homeGoals);
-            Log.d(LOG_TAG,"Match Date: "+ matchDate + " Away team: " + awayTeam + " Away score: " + awayGoals);
+            Log.d(LOG_TAG, "Match Date: " + matchDate + " Away team: " + awayTeam + " Away score: " + awayGoals);
             remoteViews.setTextViewText(R.id.homeTeamId, homeTeam);
-            if (homeGoals > -1) {
+
                 remoteViews.setTextViewText(R.id.homeScoreTextId, homeGoals.toString());
-            }
+
             remoteViews.setTextViewText(R.id.awayTeamId, awayTeam);
             if (awayGoals > -1) {
                 remoteViews.setTextViewText(R.id.awayScoreTextId, awayGoals.toString());
             }
+
             return remoteViews;
 
         }
