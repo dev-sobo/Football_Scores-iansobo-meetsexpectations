@@ -86,7 +86,7 @@ public class CollectionWidgetService extends RemoteViewsService {
             }
             //data.moveToFirst();
             RemoteViews remoteViews = new RemoteViews(getPackageName(),
-                    R.layout.single_score_widget);
+                    R.layout.collection_widget_item);
             // Get all of the strings from the cursor
            // String homeTeam = data.getString(HOME_INDEX);
             final int homeColIndex = data.getColumnIndex(DatabaseContract.scores_table.HOME_COL);
@@ -109,13 +109,13 @@ public class CollectionWidgetService extends RemoteViewsService {
             //String matchDate = data.getString(DATE_INDEX);
             Log.d(LOG_TAG,"Match Date: " +  matchDate + " Home team: " + homeTeam + " Home Score: " + homeGoals);
             Log.d(LOG_TAG, "Match Date: " + matchDate + " Away team: " + awayTeam + " Away score: " + awayGoals);
-            remoteViews.setTextViewText(R.id.homeTeamId, homeTeam);
-
-                remoteViews.setTextViewText(R.id.homeScoreTextId, homeGoals.toString());
-
-            remoteViews.setTextViewText(R.id.awayTeamId, awayTeam);
+            remoteViews.setTextViewText(R.id.homeTeamCollectionId, homeTeam);
+                if (homeGoals > -1) {
+                    remoteViews.setTextViewText(R.id.homeGoalsCollectionId, homeGoals.toString());
+                }
+            remoteViews.setTextViewText(R.id.awayTeamCollectionId, awayTeam);
             if (awayGoals > -1) {
-                remoteViews.setTextViewText(R.id.awayScoreTextId, awayGoals.toString());
+                remoteViews.setTextViewText(R.id.awayGoalsCollectionId, awayGoals.toString());
             }
 
             return remoteViews;
