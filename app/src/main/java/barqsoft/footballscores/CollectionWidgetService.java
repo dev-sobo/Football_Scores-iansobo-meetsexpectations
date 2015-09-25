@@ -11,9 +11,7 @@ import android.widget.RemoteViewsService;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * Created by ian on 9/23/2015.
- */
+
 public class CollectionWidgetService extends RemoteViewsService {
     private static final String LOG_TAG = CollectionWidgetService.class.getSimpleName();
 
@@ -67,12 +65,6 @@ public class CollectionWidgetService extends RemoteViewsService {
                     new String[]{dateFormatter.format(c.getTime())},
                     DatabaseContract.scores_table.DATE_COL + " ASC");
 
-            /*data = getContentResolver().query(DatabaseContract.BASE_CONTENT_URI,
-                    SCORE_COLUMNS,
-                    null,
-                    null,
-                    DatabaseContract.scores_table.DATE_COL + " ASC");*/
-
             Log.d(LOG_TAG, "Cursor: " + data);
 
         }
@@ -101,22 +93,8 @@ public class CollectionWidgetService extends RemoteViewsService {
             //data.moveToFirst();
             RemoteViews remoteViews = new RemoteViews(getPackageName(),
                     R.layout.collection_widget_item);
+
             // Get all of the strings from the cursor
-
-            /*final int homeColIndex = data.getColumnIndex(DatabaseContract.scores_table.HOME_COL);
-            String homeTeam = data.getString(homeColIndex);
-
-            final int homeGoalsCol = data.getColumnIndex(DatabaseContract.scores_table.HOME_GOALS_COL);
-            Integer homeGoals = data.getInt(homeGoalsCol);
-
-            final int awayColIndex = data.getColumnIndex(DatabaseContract.scores_table.AWAY_COL);
-            String awayTeam = data.getString(awayColIndex);
-
-            final int awayGoalsCol = data.getColumnIndex(DatabaseContract.scores_table.AWAY_GOALS_COL);
-            Integer awayGoals = data.getInt(awayGoalsCol);
-
-            final int matchDateCol = data.getColumnIndex(DatabaseContract.scores_table.DATE_COL);
-            String matchDate = data.getString(matchDateCol);*/
              String homeTeam = data.getString(HOME_INDEX);
             Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
             String awayTeam = data.getString(AWAY_INDEX);
