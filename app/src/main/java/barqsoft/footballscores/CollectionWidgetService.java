@@ -10,7 +10,6 @@ import android.widget.RemoteViewsService;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by ian on 9/23/2015.
@@ -61,12 +60,11 @@ public class CollectionWidgetService extends RemoteViewsService {
             }
             Uri todaysScoresUri = DatabaseContract.scores_table.buildScoreWithDate();
             Calendar c = Calendar.getInstance();
-            Date date = new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000L) - (24 * 60 * 60 * 1000L));
             SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
             data = getContentResolver().query(todaysScoresUri,
                     SCORE_COLUMNS,
                     null,
-                    new String[]{dateFormatter.format(date)} ,//c.getTime())},
+                    new String[]{dateFormatter.format(c.getTime())},
                     DatabaseContract.scores_table.DATE_COL + " ASC");
 
             /*data = getContentResolver().query(DatabaseContract.BASE_CONTENT_URI,
