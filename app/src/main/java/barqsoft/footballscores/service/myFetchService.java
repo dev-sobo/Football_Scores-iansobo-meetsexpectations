@@ -55,7 +55,7 @@ public class myFetchService extends IntentService
 
         Uri fetch_build = Uri.parse(BASE_URL).buildUpon().
                 appendQueryParameter(QUERY_TIME_FRAME, timeFrame).build();
-        //Log.v(LOG_TAG, "The url we are looking at is: "+fetch_build.toString()); //log spam
+        Log.v(LOG_TAG, "The url we are looking at is: "+fetch_build.toString()); //log spam
         HttpURLConnection m_connection = null;
         BufferedReader reader = null;
         String JSON_data = null;
@@ -88,6 +88,7 @@ public class myFetchService extends IntentService
                 return;
             }
             JSON_data = buffer.toString();
+            Log.d(LOG_TAG, JSON_data);
         }
         catch (Exception e)
         {
@@ -251,8 +252,8 @@ public class myFetchService extends IntentService
                     //log spam
 
                    // Log.v(LOG_TAG,match_id);
-                    //Log.v(LOG_TAG,mDate);
-                    //Log.v(LOG_TAG,mTime);
+                    Log.v(LOG_TAG,mDate);
+                    Log.v(LOG_TAG,mTime);
                     //Log.v(LOG_TAG,Home);
                     //Log.v(LOG_TAG,Away);
                     //Log.v(LOG_TAG,Home_goals);

@@ -111,12 +111,22 @@ public class ScoresProvider extends ContentProvider
                     //Log.v(FetchScoreTask.LOG_TAG,selectionArgs[1]);
                     //Log.v(FetchScoreTask.LOG_TAG,selectionArgs[2]);
                     retCursor = mOpenHelper.getReadableDatabase().query(
-                    DatabaseContract.SCORES_TABLE,
-                    projection,SCORES_BY_DATE,selectionArgs,null,null,sortOrder);
+                            DatabaseContract.SCORES_TABLE,
+                            projection,
+                            SCORES_BY_DATE,
+                            selectionArgs,
+                            null,
+                            null,
+                            sortOrder);
                 break;
             case MATCHES_WITH_ID: retCursor = mOpenHelper.getReadableDatabase().query(
                     DatabaseContract.SCORES_TABLE,
-                    projection,SCORES_BY_ID,selectionArgs,null,null,sortOrder);
+                    projection,
+                    SCORES_BY_ID,
+                    selectionArgs,
+                    null,
+                    null,
+                    sortOrder);
                 break;
             case MATCHES_WITH_LEAGUE: retCursor = mOpenHelper.getReadableDatabase().query(
                     DatabaseContract.SCORES_TABLE,

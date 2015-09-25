@@ -2,10 +2,15 @@ package barqsoft.footballscores;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by ian on 9/23/2015.
@@ -54,12 +59,23 @@ public class CollectionWidgetService extends RemoteViewsService {
             if (data != null) {
                 data.close();
             }
-            data = getContentResolver().query(DatabaseContract.BASE_CONTENT_URI,
+            Uri todaysScoresUri = DatabaseContract.scores_table.buildScoreWithDate();
+            Calendar c = Calendar.getInstance();
+            Date date = new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000L) - (24 * 60 * 60 * 1000L));
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+            data = getContentResolver().query(todaysScoresUri,
+                    SCORE_COLUMNS,
+                    null,
+                    new String[]{dateFormatter.format(date)} ,//c.getTime())},
+                    DatabaseContract.scores_table.DATE_COL + " ASC");
+
+            /*data = getContentResolver().query(DatabaseContract.BASE_CONTENT_URI,
                     SCORE_COLUMNS,
                     null,
                     null,
-                    DatabaseContract.scores_table.DATE_COL + " ASC");
-            Log.d(LOG_TAG,"Cursor: " + data);
+                    DatabaseContract.scores_table.DATE_COL + " ASC");*/
+
+            Log.d(LOG_TAG, "Cursor: " + data);
 
         }
 
