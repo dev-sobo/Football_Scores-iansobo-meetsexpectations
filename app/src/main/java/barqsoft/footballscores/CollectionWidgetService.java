@@ -103,16 +103,21 @@ public class CollectionWidgetService extends RemoteViewsService {
             Log.d(LOG_TAG,"Match Date: " +  matchDate + " Home team: " + homeTeam + " Home Score: " + homeGoals);
             Log.d(LOG_TAG, "Match Date: " + matchDate + " Away team: " + awayTeam + " Away score: " + awayGoals);
             remoteViews.setTextViewText(R.id.homeTeamCollectionId, homeTeam);
-                if (homeGoals > -1) {
-                    remoteViews.setTextViewText(R.id.homeGoalsCollectionId, homeGoals.toString());
-                }
+            if (homeGoals > -1) {
+                remoteViews.setTextViewText(R.id.homeGoalsCollectionId, homeGoals.toString());
+            } else if (homeGoals <= -1) {
+                remoteViews.setTextViewText(R.id.homeGoalsCollectionId, "No Score");
+            }
+
             remoteViews.setTextViewText(R.id.awayTeamCollectionId, awayTeam);
             if (awayGoals > -1) {
                 remoteViews.setTextViewText(R.id.awayGoalsCollectionId, awayGoals.toString());
+            } else if (awayGoals <= -1) {
+                remoteViews.setTextViewText(R.id.awayGoalsCollectionId, "No Score");
             }
 
-            return remoteViews;
 
+            return remoteViews;
         }
 
         @Override
