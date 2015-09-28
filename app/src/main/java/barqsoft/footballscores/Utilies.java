@@ -77,7 +77,7 @@ public class Utilies
 
         if (teamname==null){return R.drawable.no_icon;}
         switch (teamname)
-        { // TODO: These are untranslateable
+        {
             case "Arsenal London FC" : return R.drawable.arsenal;
             case "Manchester United FC" : return R.drawable.manchester_united;
             case "Swansea City" : return R.drawable.swansea_city_afc;

@@ -1,6 +1,7 @@
 package barqsoft.footballscores;
 
 import android.app.IntentService;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -72,8 +73,10 @@ public class SingleItemWidgetService extends IntentService {
         Log.v(LOG_TAG, "awayh score: " + awayGoals);
         Log.v(LOG_TAG, "date" + databaseDate);
 
-
+       Intent clickingIntent = new Intent(getApplicationContext(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, clickingIntent, 0);
         RemoteViews views = new RemoteViews(getPackageName(), R.layout.single_score_widget);
+        views.setOnClickPendingIntent(R.id.relativeLayoutSingle, pendingIntent);
 
         views.setTextViewText(R.id.homeTeamId, homeTeam);
         if (homeGoals > -1) {

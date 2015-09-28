@@ -106,14 +106,14 @@ public class CollectionWidgetService extends RemoteViewsService {
             if (homeGoals > -1) {
                 remoteViews.setTextViewText(R.id.homeGoalsCollectionId, homeGoals.toString());
             } else if (homeGoals <= -1) {
-                remoteViews.setTextViewText(R.id.homeGoalsCollectionId, "No Score");
+                remoteViews.setTextViewText(R.id.homeGoalsCollectionId, getString(R.string.noScore));
             }
 
             remoteViews.setTextViewText(R.id.awayTeamCollectionId, awayTeam);
             if (awayGoals > -1) {
                 remoteViews.setTextViewText(R.id.awayGoalsCollectionId, awayGoals.toString());
             } else if (awayGoals <= -1) {
-                remoteViews.setTextViewText(R.id.awayGoalsCollectionId, "No Score");
+                remoteViews.setTextViewText(R.id.awayGoalsCollectionId,  getString(R.string.noScore));
             }
 
 
