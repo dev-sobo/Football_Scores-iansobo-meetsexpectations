@@ -94,7 +94,14 @@ public class CollectionWidgetService extends RemoteViewsService {
             RemoteViews remoteViews = new RemoteViews(getPackageName(),
                     R.layout.collection_widget_item);
 
+            //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+           // PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0,intent,0);
+            //remoteViews.setOnClickPendingIntent(R.id.collectionListViewId, pendingIntent);
             // Get all of the strings from the cursor
+            Intent fillInIntent = new Intent();
+            fillInIntent.putExtra("EXTRA_ITEM", position);
+            remoteViews.setOnClickFillInIntent(R.id.linearLayoutCollectionWidget, fillInIntent);
+
              String homeTeam = data.getString(HOME_INDEX);
             Integer homeGoals = data.getInt(HOME_GOALS_INDEX);
             String awayTeam = data.getString(AWAY_INDEX);

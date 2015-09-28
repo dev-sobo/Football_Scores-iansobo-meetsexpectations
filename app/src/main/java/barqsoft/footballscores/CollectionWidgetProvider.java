@@ -1,5 +1,6 @@
 package barqsoft.footballscores;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -21,8 +22,19 @@ public class CollectionWidgetProvider extends AppWidgetProvider {
             Intent intent = new Intent(context, CollectionWidgetService.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetIds[i]);
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
+
+           // Intent clickingIntent = new Intent(context.getApplicationContext(), MainActivity.class);
+           // PendingIntent pendingIntent = PendingIntent.getActivity(context.getApplicationContext(), 0, clickingIntent, 0);
             // RemoteViews object for the collection widget's layout
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.collection_widget );
+
+            Intent startMainActivity = new Intent(context, MainActivity.class);
+            PendingIntent startMainActivityPending = PendingIntent.getActivity(context,
+                    0, startMainActivity, PendingIntent.FLAG_UPDATE_CURRENT );
+            remoteViews.setPendingIntentTemplate(R.id.collectionListViewId, startMainActivityPending);
+
+            // set up the pending intent to launch main activity
+            //remoteViews.setOnClickPendingIntent(R.id.collectionListViewId, pendingIntent);
             // Now connect the remoteviews object to use a remoteviews adapter.
             // this connects to a RemoteViewsService, described by the intent above.
             remoteViews.setRemoteAdapter(R.id.collectionListViewId, intent);

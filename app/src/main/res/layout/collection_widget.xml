@@ -16,5 +16,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/NoData"
         android:id="@+id/emptyView"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:textIsSelectable="false"/>
+
 </FrameLayout>
